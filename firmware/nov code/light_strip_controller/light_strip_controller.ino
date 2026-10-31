@@ -1,7 +1,23 @@
 /*
   ============================================================================
-   Light Strip Controller  -  Version 0.1
-   Board: ESP32-C3 Super Mini
+         Light Strip Controller  -  Version 0.1
+             Board: ESP32-C3 Super Mini
+               +-----------------------+
+               |         USB-C         |
+               +-----------------------+
+      5V  [ 5V ]                       [ 5V ]  5V (Power Input)
+     GND  [  G ]                       [  G ]  GND (Ground)
+    3.3V  [ 3.3]                       [ 3.3]  3.3V Power Output
+     A4   [ 4  ] <-- (GPIO 4: Mic WS)  [ 5  ]  (GPIO 5: Mic SCK) --> A5 / MISO
+     A3   [ 3  ] <-- (GPIO 3: LED DIN) [ 6  ]  (GPIO 6: Mic SD)  --> MOSI
+     A2   [ 2  ] <-- (GPIO 2: Enc CLK) [ 7  ]  (GPIO 7: Enc SW)  --> SS
+     A1   [ 1  ] <-- (GPIO 1: Enc DT)  [ 8  ]  (GPIO 8: OLED SDA)--> SDA
+     A0   [ 0  ] <-- (GPIO 0: Battery) [ 9  ]  (GPIO 9: OLED SCL)--> SCL
+               |                       |
+               |     [ ESP32-C3 ]      |
+               |     [ Super Mini ]    |
+               +-----------------------+
+                     [ Antenna ]
   ============================================================================
 
   FEATURES
